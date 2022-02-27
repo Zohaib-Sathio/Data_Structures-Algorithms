@@ -99,6 +99,13 @@ public class LinkedStack {
         }
         return false;
     }
+    
+    public LinkedStack reverse(){
+        LinkedStack reversed = new LinkedStack();
+        for (Node p = top; p != null; p = p.next)
+            reversed.push(p.data);
+        return reversed;
+    }
 
     public void print() {
         for (Node p = top; p != null; p = p.next) {
@@ -115,6 +122,9 @@ public class LinkedStack {
         linkedStack.push("Zohaib");
         linkedStack.push("LinkedStack");
         System.out.println("Size: " + linkedStack.size());
+        
+        LinkedStack linkedStack2 = linkedStack.reverse();
+        linkedStack.print();
 
         //To only print elements
 //        linkedStack.print();
