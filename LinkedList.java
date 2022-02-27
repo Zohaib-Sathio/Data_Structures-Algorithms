@@ -89,20 +89,18 @@ public class LinkedList {
         return start;
     }
     
-    public LinkedList reverse(){
-        LinkedList list = new LinkedList();
-        Node q;
-        for(q = start; q.next != null; q = q.next){}
-        list.insert(q.data);
-        for(Node r = start; r.next != null; r = r.next){
-            for(Node p = start; p.next != null; p = p.next){
-            if(p.next == q){
-                list.insert(p.data);
-                q = p;
-            }
-        }
-        }
+    public LinkedList reverse(LinkedList list){
         
+        Node prev = null;
+        Node current = list.start;
+        Node next;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        list.start = prev;
         return list;
     }
     
@@ -193,7 +191,7 @@ public class LinkedList {
 //        list.merge(list2);
         
         //Reversing
-//        LinkedList list3 = list.reverse();
+//        LinkedList list3 = list.reverse(list);
 //        list3.display();
 
 
