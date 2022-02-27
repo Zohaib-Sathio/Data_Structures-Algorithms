@@ -71,7 +71,7 @@ public class LinkedList {
     
     public boolean contains(Object object){
         if(start.data.equals(object)) return true;
-        for(Node p = start; p.next != null; p = p.next){
+        for(Node p = start; p != null; p = p.next){
             if(p.data== object) return true;
         }
         return false;
