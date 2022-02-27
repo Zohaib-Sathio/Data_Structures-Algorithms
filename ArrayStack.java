@@ -64,6 +64,19 @@ public class ArrayStack {
         return false;
     }
     
+    //Reverses the stack on which method is executed.
+    public void reverse(){
+        int breakOut = 0;
+        for (int i = 0; i < size; i++) {
+            if(breakOut == size/2) break;
+            int y = i+1;
+            Object temp = a[i];
+            a[i] = a[size-y];
+            a[size-y] = temp;
+            breakOut++;
+        }
+    }
+    
     public void printOnly(){
         int loopingNumber = size-1;
         for (int i = loopingNumber; i >= 0; i--) {
